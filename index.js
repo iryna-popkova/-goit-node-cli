@@ -1,5 +1,6 @@
-import { program } from "commander";
-const contacts = require("./contacts.js");
+const { program } = require("commander");
+
+const contacts = require("./contacts");
 
 program
   .option("-a, --action <type>", "choose action")
@@ -12,7 +13,6 @@ program.parse();
 
 const options = program.opts();
 
-// TODO: рефакторити
 async function invokeAction({ action, id, name, email, phone }) {
   switch (action) {
     case "list":
